@@ -1,0 +1,26 @@
+Configuration:
+  status: debug
+
+  Appenders:
+    Console:
+      name: CONSOLE
+      target: SYSTEM_OUT
+      PatternLayout:
+        Pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %c{3} - %msg%n"
+
+  Loggers:
+    Logger:
+      - name: cobot00.gs.first
+        additivity: false
+        level: warn
+        AppenderRef:
+          - ref: CONSOLE
+      - name: cobot00.gs.first.second
+        additivity: false
+        level: info
+        AppenderRef:
+          - ref: CONSOLE
+    Root:
+      level: debug
+      AppenderRef:
+        ref: CONSOLE

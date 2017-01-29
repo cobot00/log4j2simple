@@ -1,0 +1,46 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('commons-collections:commons-collections:3.2')
+    testCompile('junit:junit:4.+')
+
+    compile('org.projectlombok:lombok:1.16.12')
+
+    compile('org.apache.logging.log4j:log4j-core:2.7')
+    compile('org.apache.logging.log4j:log4j-api:2.7')
+
+    compile('com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.5')
+    compile('com.fasterxml.jackson.core:jackson-core:2.8.5')
+    compile('com.fasterxml.jackson.core:jackson-databind:2.8.5')
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
