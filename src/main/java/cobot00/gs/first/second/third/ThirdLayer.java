@@ -1,4 +1,4 @@
-package cobot00.gs.first;
+package cobot00.gs.first.second.third;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,7 @@ import lombok.extern.log4j.Log4j2;
 @Data
 @Log4j2
 @AllArgsConstructor
-public class FirstLayer {
-
-    //private static final Logger log = LogManager.getLogger(FirstLayer.class);
+public class ThirdLayer {
 
     private int number;
     private String tag;
